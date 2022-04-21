@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom'
 
 
 function UpdateProblem() {
-  const [problem,updateProblem]= useState({})
+  const [problem,updateProblem]= useState({
+    title:'',description:'',difficulty:'',solution:''
+  })
   const {id}=useParams()
   const handleChange=(e)=>{
     updateProblem({...problem,[e.target.name]:e.target.value})

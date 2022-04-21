@@ -73,7 +73,7 @@ def get_problem(id):
 def get_problems():
   conn = sqlite3.connect('db.sqlite3')
   cur = conn.cursor()
-  cur.execute(f"SELECT * FROM problems")
+  cur.execute(f"SELECT *,rowid FROM problems")
   problems = cur.fetchall()
   conn.commit()
   conn.close()

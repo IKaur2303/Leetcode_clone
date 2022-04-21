@@ -59,8 +59,9 @@ def getproblems(request):
     if request.method == 'GET':
         problems = sql.get_problems()
         data=[]
+        print(problems)
         for problem in problems:
-            data.append({'title':problem[0],'description':problem[1],'difficulty':problem[2],'solution':problem[3]})
+            data.append({'title':problem[0],'description':problem[1],'difficulty':problem[2],'solution':problem[3],'id':problem[5]})
         return JsonResponse(data={'data':data})
 
 @csrf_exempt

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 function AddProblem() {
-  const [problem,setProblem]= useState({})
+  const [problem,setProblem]= useState({
+    title:'',description:'',difficulty:'',solution:''
+  })
 
   const handleChange=(e)=>{
     setProblem({...problem,[e.target.name]:e.target.value})
